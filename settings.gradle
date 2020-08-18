@@ -1,0 +1,3 @@
+include ':OptionsDialog'
+include ':app'
+rootProject.name = "clkOptionsDialog"
