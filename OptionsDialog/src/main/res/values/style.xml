@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DialogBottomButtonPositive" parent="">
+        <item name="android:background">@drawable/button_transparent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:fontFamily">@font/tommy_soft_bold</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <style name="DialogBottomButtonNegative" parent="">
+        <item name="android:background">@drawable/button_transparent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/orange_cinnamon</item>
+        <item name="android:fontFamily">@font/tommy_soft_bold</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
+
+    <style name="DialogBottomButtonThird" parent="">
+        <item name="android:background">@drawable/button_transparent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:fontFamily">@font/tommy_soft_bold</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+</resources>
