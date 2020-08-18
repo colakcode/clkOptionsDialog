@@ -22,7 +22,15 @@ Step 2. Add the dependency
 
 
 ### Java Code
-        OptionsDialog.showWithThird(this,"Do you want to delete only this file or all your files?", "Delete","Delete All","Cancel", Gravity.BOTTOM );
+        OptionsDialog.showWithThreeOptions(activity, "Do you want to delete only this file or all your files?", "Delete", "Delete All", "Cancel", Gravity.BOTTOM );
+
+or<br/>
+
+	OptionsDialog.showWithOneOption(activity, "Information window...", "Cancel", Gravity.BOTTOM );
+	
+or<br/>
+
+	OptionsDialog.showWithTwoOptions(activity, "Do you want to save this file?", "Save", "Cancel", Gravity.CENTER );
         
 ### Call buttons and set onClickMethod
         OptionsDialog.getButtonLeft().setOnClickListener(new View.OnClickListener() {
