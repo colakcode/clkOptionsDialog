@@ -24,11 +24,11 @@ Step 2. Add the dependency
 ### Java Code
         OptionsDialog.showWithThreeOptions(activity, "Do you want to delete only this file or all your files?", "Delete", "Delete All", "Cancel", Gravity.BOTTOM );
 
-or<br/>
+or with just one option button<br/>
 
 	OptionsDialog.showWithOneOption(activity, "Information window...", "Cancel", Gravity.BOTTOM );
 	
-or<br/>
+with two option button<br/>
 
 	OptionsDialog.showWithTwoOptions(activity, "Do you want to save this file?", "Save", "Cancel", Gravity.CENTER );
         
