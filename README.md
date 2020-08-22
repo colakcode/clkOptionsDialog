@@ -1,4 +1,5 @@
 # clkOptionsDialog
+
 Easy Options Dialog for your Android app. Dialog window with three option buttons for simple requests you want to users in your Android applications.
 
 ### GetStarted
@@ -14,7 +15,7 @@ Step 1. Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
     dependencies {
-	        implementation 'com.github.colakcode:clkOptionsDialog:v0.1.0'
+	        implementation 'com.github.colakcode:clkOptionsDialog:v0.1.1'
 	  }
 
 ### Screenshot
@@ -22,15 +23,15 @@ Step 2. Add the dependency
 
 
 ### Java Code
-        OptionsDialog.showWithThreeOptions(activity, "Do you want to delete only this file or all your files?", "Delete", "Delete All", "Cancel", Gravity.BOTTOM );
+        OptionsDialog.showWithThreeOptions(activity, "Do you want to delete only this file or all your files?", "Delete", "Delete All", "Cancel", OptionsDialog.DialogGravity.BOTTOM );
 
 or with just one option button<br/>
 
-	OptionsDialog.showWithOneOption(activity, "Information window...", "Cancel", Gravity.BOTTOM );
+	OptionsDialog.showWithOneOption(activity, "Information window...", "Cancel", OptionsDialog.DialogGravity.CENTER );
 	
 with two option button<br/>
 
-	OptionsDialog.showWithTwoOptions(activity, "Do you want to save this file?", "Save", "Cancel", Gravity.CENTER );
+	OptionsDialog.showWithTwoOptions(activity, "Do you want to save this file?", "Save", "Cancel", OptionsDialog.DialogGravity.BOTTOM );
         
 ### Call buttons and set onClickMethod
         OptionsDialog.getButtonLeft().setOnClickListener(new View.OnClickListener() {
@@ -50,7 +51,7 @@ You can choose many options such as background color, information text color and
      OptionsDialog.setInfoTextColor(Color.BLACK);
      OptionsDialog.setAllButtonTextColor(Color.RED);
      
- Open dialog window **Gravity.BOTTOM**, **Gravity.CENTER** or **Gravity.TOP**
+ Open dialog window **OptionsDialog.DialogGravity.BOTTOM**, ***.CENTER** or ***.TOP**
      
 ## Author
 Kemal ÇOLAK [@colakcode](https://github.com/colakcode/) on GitHub
