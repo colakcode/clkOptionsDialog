@@ -2,6 +2,7 @@ package com.clk.optionsdialog;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -18,7 +19,9 @@ public class OptionsDialog {
     private static TextView textViewInfo;
     private static CardView cardView;
 
-    public static void showWithTwoOptions(Activity activity, String textInfo, String textRightButton, String textLeftButton, int gravity){
+    public enum DialogGravity{BOTTOM,CENTER,TOP}
+
+    public static void showWithTwoOptions(Activity activity, String textInfo, String textRightButton, String textLeftButton, DialogGravity gravity){
 
         dialog=new Dialog(activity);
         dialog.setContentView(R.layout.dialog_options);
@@ -35,13 +38,13 @@ public class OptionsDialog {
         buttonLeft.setText(textLeftButton);
 
         DialogMethods.setWidth(activity,dialog);
-        DialogMethods.setGravity(dialog, gravity);
+        DialogMethods.setGravity(dialog, getGravity(gravity));
         DialogMethods.setAnimation(activity,layoutMain);
         dialog.show();
 
     }
 
-    public static void showWithOneOption(Activity activity, String textInfo, String textRightButton, int gravity){
+    public static void showWithOneOption(Activity activity, String textInfo, String textRightButton, DialogGravity gravity){
 
         dialog=new Dialog(activity);
         dialog.setContentView(R.layout.dialog_options);
@@ -58,12 +61,12 @@ public class OptionsDialog {
         buttonRight.setText(textRightButton);
 
         DialogMethods.setWidth(activity,dialog);
-        DialogMethods.setGravity(dialog, gravity);
+        DialogMethods.setGravity(dialog,  getGravity(gravity));
         DialogMethods.setAnimation(activity,layoutMain);
         dialog.show();
     }
 
-    public static void showWithThreeOptions(Activity activity, String textInfo, String textLeftButton, String textRightButton, String textMiddleButton, int gravity){
+    public static void showWithThreeOptions(Activity activity, String textInfo, String textLeftButton, String textRightButton, String textMiddleButton, DialogGravity gravity){
 
         dialog=new Dialog(activity);
         dialog.setContentView(R.layout.dialog_options);
@@ -80,7 +83,7 @@ public class OptionsDialog {
         buttonMiddle.setText(textMiddleButton);
 
         DialogMethods.setWidth(activity,dialog);
-        DialogMethods.setGravity(dialog, gravity);
+        DialogMethods.setGravity(dialog,  getGravity(gravity));
         DialogMethods.setAnimation(activity,layoutMain);
         dialog.show();
 
@@ -102,6 +105,22 @@ public class OptionsDialog {
 
     public static void dismiss(){
         if(dialog!=null && dialog.isShowing()) dialog.dismiss();
+    }
+
+    private static int getGravity(DialogGravity dialogGravity){
+        int gravity=0;
+        switch (dialogGravity){
+            case BOTTOM:
+                gravity = Gravity.BOTTOM;
+                break;
+            case CENTER:
+                gravity =  Gravity.CENTER;
+                break;
+            case TOP:
+                gravity =  Gravity.TOP;
+                break;
+        }
+        return gravity;
     }
 
     public static Button getButtonRight(){
